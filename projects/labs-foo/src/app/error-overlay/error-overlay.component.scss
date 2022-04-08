@@ -1,0 +1,38 @@
+.overlay {
+  display: block;
+  background-color: #202020;
+  color: #b2b2b2;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, .4);
+  padding: 1rem;
+  pointer-events: none;
+  position: relative;
+  min-width: 4rem;
+  text-align: center;
+  transition: opacity .3s ease;
+
+
+  &:before {
+    content: '';
+    background-color: #f44336;
+    width: 4px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    transform: translateX(-100%);
+  }
+}
+
+:host {
+  display: block;
+  
+  @media(hover){
+    &:hover {
+      .overlay {
+        opacity: .1;
+      }
+    }
+  }
+
+}
